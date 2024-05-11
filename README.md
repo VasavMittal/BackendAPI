@@ -1,5 +1,3 @@
-Sure, I've made some corrections and adjustments to the README file:
-
 ```
 # BackendAPI
 
