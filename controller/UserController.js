@@ -1,5 +1,5 @@
 // controllers/userController.js
-
+import jwt from 'jsonwebtoken';
 import User from '../models/User.js';
 
 // User login
@@ -129,8 +129,15 @@ export async function getAllUsers(req, res, next) {
 
 // Function to generate JWT token
 function generateToken(user) {
-  // Example implementation using JSON Web Tokens (JWT)
-  // You may want to use a library like jsonwebtoken for this
-  const token = 'exampleToken';
+  // Define the payload for the JWT token
+  const payload = {
+    userId: user.email, // Assuming user has an id property
+    username: user.username // Assuming user has a username property
+    // You can add more data to the payload if needed
+  };
+
+  // Generate the JWT token with a secret key and options
+  const token = jwt.sign(payload, 'your-secret-key', { expiresIn: '1h' }); // Change 'your-secret-key' to your actual secret key and adjust expiresIn as needed
+  
   return token;
 }
