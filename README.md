@@ -166,5 +166,3 @@ The base URL for all endpoints is `http://127.0.0.1:3000/api/users`.
   - **Code:** `200 OK`
   - **Content:** List of all users with limited information.
 ```
-
-I've reformatted and organized the content to make it more readable and structured. Let me know if you need further modifications!
